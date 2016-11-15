@@ -13,7 +13,7 @@ dropdown **multilevel menu**
 ## Install
 * Install the package: `npm i @mrvito/tinymce-4-snippet-plugin`
 * Require or include the `plugin.js` or `plugin.min.js` into your project
-* Also include `snippet.css` into your styles
+* Also include `snippet.css` with your styles
 
 ## Configuration
 - Add `snippet` to param *plugins*
