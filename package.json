@@ -1,0 +1,24 @@
+{
+  "name": "@mrvito/tinymce-4-snippet-plugin",
+  "version": "1.0.0",
+  "description": "TinyMCE snippet plugin",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrVito/tinymce-4-snippet-plugin.git"
+  },
+  "keywords": [
+    "TinyMCE",
+    "snippet",
+    "plugin"
+  ],
+  "author": "Vytautas Lozickas <vytaslll@hotmail.com> (https://github.com/mrVito)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrVito/tinymce-4-snippet-plugin/issues"
+  },
+  "homepage": "https://github.com/mrVito/tinymce-4-snippet-plugin#readme"
+}
