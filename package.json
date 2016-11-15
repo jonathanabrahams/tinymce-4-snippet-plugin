@@ -2,7 +2,7 @@
   "name": "@mrvito/tinymce-4-snippet-plugin",
   "version": "1.0.0",
   "description": "TinyMCE snippet plugin",
-  "main": "plugin.js",
+  "main": "src/tinymce/plugins/snippet/plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
