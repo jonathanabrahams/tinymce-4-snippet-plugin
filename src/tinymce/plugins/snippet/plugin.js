@@ -49,6 +49,7 @@ tinymce.PluginManager.add('snippet', function (editor, url) {
         editor.addButton('snippet', {
             type: 'menubutton',
             text: '',
+            tooltip: 'Snippets',
             icon: false,
             menu: addItems(snippet_data)
         });
