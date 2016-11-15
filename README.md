@@ -1,5 +1,5 @@
 # TinyMCE 4.x Snippet plugin
-Plugin create simple multi level dropdown menu for inserting custom HTML code or plain text into your text.
+Plugin for simple multi level dropdown menu for inserting custom HTML or plain text into your editor.
 
 This plugin supports ***TinyMCE 4.x***.
 
@@ -11,86 +11,94 @@ dropdown **multilevel menu**
 ![image](screenshot.png)
 
 ## Install
-* Install the package: `npm i @mrvito/tinymce-4-snippet-plugin`
-* Require or include the `plugin.js` or `plugin.min.js` into your project
-* Also include `snippet.css` with your styles
+Install the package: `npm i @mrvito/tinymce-4-snippet-plugin`
+
+Use:
+* Require (`require('@mrvito/tinymce-4-snippet-plugin')` or `import '@mrvito/tinymce-4-snippet-plugin'`)
+
+OR
+
+* Include the `plugin.js` or `plugin.min.js` file into your project
 
 ## Configuration
-- Add `snippet` to param *plugins*
-- Insert the `snippet` button to toolbar
-- Define param `snippet_list`
-```
+- Add `snippet` to the *plugins* list
+- Insert `snippet` button to the toolbar
+- Assign snippet data to `snippet_list` parameter
+```js
 var snippet_data = [];
 
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'snippet',
-    toolbar: 'snippet',
-    snippet_list: snippet_data
+  selector: 'textarea',
+  plugins: 'snippet',
+  toolbar: 'snippet',
+  snippet_list: snippet_data
 });
 ```
 ## Data
 
-
-You must define data source `snippet_data`. Source must be defined before `tinyMCE.init` definition.
+Snippet data to be assigned to `snippet_list` parameter.
 * `title` = menu item title
 * `value` = HTML or plain text that will be inserted
-* `items` = submenu = array of menu items
+* `items` = array of sub-menu items
 
 ```
-var snippet_data = [
-{
+...
+snippet_list: [
+  {
     title: "Czech Republic",
     value: "",
     items: [
-        {
-            title: "West Bohemia",
-            value: "",
-            items: [
-                {
-                    title: "Mariánské Lázně",
-                    value: "City: Mariánské Lázně"
-                },
-                {
-                    title: "Plzeň",
-                    value: "City: Plzeň"
-                },
-                {
-                    title: "Karlovy Vary",
-                    value: "City: Karlovy Vary"
-                }
-            ]
-        }]
-}
-];
+      {
+        title: "West Bohemia",
+        value: "",
+        items: [
+          {
+            title: "Mariánské Lázně",
+            value: "City: Mariánské Lázně"
+          },
+          {
+            title: "Plzeň",
+            value: "City: Plzeň"
+          },
+          {
+            title: "Karlovy Vary",
+            value: "City: Karlovy Vary"
+          }
+        ]
+      }
+    ]
+  }
+]
+...
 ```
-## Events
+## Callback
 
+You can use a callback function:
 
-You can use the callback function:
+* `onSelect` = callback function to be called when menu item is selected
 
-* `onSelect` = callback function when selecting
-
-```
-var snippet_data = [
-{
+```js
+...
+snippet_list: [
+  {
     title: "Cities",
     value: "",
     items: [
-        {
-            title: "Pilsen",
-            value: "49.746955, 13.377288",
-            onSelect: function (item) {
-            
-                //menu item name => Pilsen
-                console.log(item.title);
+      {
+        title: "Pilsen",
+        value: "49.746955, 13.377288",
+        onSelect: function (item) {
+          //menu item name => Pilsen
+          console.log(item.title);
                 
-                //menu item value => 49.746955, 13.377288
-                console.log(item.value);
-            }
-        }]
-}
-];
+          //menu item value => 49.746955, 13.377288
+          console.log(item.value);
+        }
+      }
+    ]
+  }
+]
+...
 ```
 
 ## Demo
